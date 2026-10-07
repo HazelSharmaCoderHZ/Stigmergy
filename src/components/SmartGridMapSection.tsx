@@ -74,10 +74,7 @@ export const SmartGridMapSection: React.FC<SmartGridMapSectionProps> = ({
           <div className="space-y-1">
             <div className="flex items-center gap-2 text-xs font-mono text-cyan-400 uppercase tracking-wider">
               <Compass className="w-3.5 h-3.5" />
-              <span>Full Topology Operations Stage</span>
-              <span aria-hidden="true">·</span>
-              <span className="text-slate-400">16 Regional Zones · Active Meshed Transmission</span>
-            </div>
+              </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
               Interactive Smart Grid Operations Map
             </h2>

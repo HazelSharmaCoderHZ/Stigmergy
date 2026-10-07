@@ -126,10 +126,7 @@ export const StigmergyVisualizer: React.FC<StigmergyVisualizerProps> = ({
           <div className="space-y-2 max-w-3xl">
             <div className="flex items-center gap-2 text-xs font-mono text-blue-600 font-semibold tracking-wider uppercase">
               <Radio className="w-3.5 h-3.5" />
-              <span>Core Theoretical Foundation</span>
-              <span aria-hidden="true">·</span>
-              <span className="text-slate-500">Biological Inspiration Adapted to Electrodynamics</span>
-            </div>
+              </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
               Stigmergic Coordination Through the Grid Medium
             </h2>
@@ -353,14 +350,14 @@ export const StigmergyVisualizer: React.FC<StigmergyVisualizerProps> = ({
 
         </div>
 
-        {/* 6 Formal Digital Pheromone Signal Types Recognized by the Grid */}
+        {/* Smart Grid Environmental Signals */}
         <div className="space-y-4">
           <div className="space-y-1">
             <h3 className="text-lg font-bold text-slate-900">
-              Taxonomy of Smart Grid Environmental Signals
+              Smart Grid Environmental Signals
             </h3>
             <p className="text-xs text-slate-600">
-              Unlike arbitrary messages, signals are mathematical state variables mapped to transmission buses and spatial zones.
+              Signals are state variables mapped to transmission buses and spatial zones.
             </p>
           </div>
 
@@ -368,65 +365,72 @@ export const StigmergyVisualizer: React.FC<StigmergyVisualizerProps> = ({
             {[
               {
                 type: 'DEMAND_SIGNAL',
-                color: 'border-l-4 border-l-red-500 bg-slate-50',
-                title: 'Demand Pheromone',
-                badge: 'Alert / Sinks',
-                desc: 'Emitted when transformer thermal load > 85% or bus voltage drops below 0.95 p.u. Attracts nearest energy distributors.',
-                gradientEffect: 'Increases routing attraction probability',
+                dot: 'bg-red-500',
+                title: 'Demand',
+                badge: 'Sinks',
+                desc: 'Emitted when transformer load exceeds 85% or bus voltage drops below 0.95 p.u.',
+                effect: 'Raises routing attraction',
               },
               {
                 type: 'ENERGY_SURPLUS',
-                color: 'border-l-4 border-l-cyan-500 bg-slate-50',
-                title: 'Surplus Wave',
-                badge: 'Generation / Sources',
-                desc: 'Emitted by solar fields and wind farms during sudden meteorological peaks. Repels storage curtailment and alerts BESS chargers.',
-                gradientEffect: 'Forms high potential gradient hill',
+                dot: 'bg-cyan-500',
+                title: 'Surplus',
+                badge: 'Sources',
+                desc: 'Emitted by solar and wind during sudden generation peaks. Alerts BESS chargers.',
+                effect: 'Forms a high-potential gradient',
               },
               {
                 type: 'CONGESTION_GRADIENT',
-                color: 'border-l-4 border-l-amber-500 bg-slate-50',
-                title: 'Congestion Repulsion',
-                badge: 'Line Impedance',
-                desc: 'Deposited along transmission corridors operating near thermal ampacity. Deflects incoming power flow onto alternative meshes.',
-                gradientEffect: 'Applies penalty factor to transmission weights',
+                dot: 'bg-amber-500',
+                title: 'Congestion',
+                badge: 'Lines',
+                desc: 'Deposited on corridors near thermal limits. Deflects flow onto alternative paths.',
+                effect: 'Penalizes transmission weights',
               },
               {
                 type: 'PRIORITY_DISPATCH',
-                color: 'border-l-4 border-l-blue-600 bg-slate-50',
-                title: 'Priority Reserve Signal',
-                badge: 'Life-Critical Hubs',
-                desc: 'Sustained environmental marker anchored at hospitals and critical municipal pumps ensuring uninterruptible reserve allocation.',
-                gradientEffect: 'Enforces hard non-evaporating barrier',
+                dot: 'bg-blue-600',
+                title: 'Priority Reserve',
+                badge: 'Critical',
+                desc: 'Permanent marker at hospitals and critical pumps to guarantee reserve power.',
+                effect: 'Non-evaporating barrier',
               },
               {
                 type: 'LOAD_PRESSURE',
-                color: 'border-l-4 border-l-orange-500 bg-slate-50',
-                title: 'Load Pressure Gradient',
-                badge: 'EV & Commercial',
-                desc: 'Aggregated micro-signals from clusters of fast EV chargers signaling forecasted demand ramps 15 minutes ahead of time.',
-                gradientEffect: 'Pre-biases BESS readiness state',
+                dot: 'bg-orange-500',
+                title: 'Load Pressure',
+                badge: 'EV / Commercial',
+                desc: 'Aggregated EV charger signals forecasting demand ramps 15 minutes ahead.',
+                effect: 'Pre-biases BESS readiness',
               },
               {
                 type: 'AVAILABLE_CAPACITY',
-                color: 'border-l-4 border-l-emerald-500 bg-slate-50',
-                title: 'Storage Capacity Signal',
-                badge: 'Flexibility / BESS',
-                desc: 'Broadcast by battery systems with SOC > 80% ready to absorb unexpected wind gusts or solar spikes.',
-                gradientEffect: 'Absorbs transient surge oscillations',
+                dot: 'bg-emerald-500',
+                title: 'Storage Capacity',
+                badge: 'BESS',
+                desc: 'Broadcast by batteries with SOC above 80% ready to absorb surges.',
+                effect: 'Absorbs transient surges',
               },
             ].map((sig) => (
-              <div key={sig.type} className={`p-4 rounded-lg border border-slate-200 ${sig.color} space-y-2`}>
+              <div
+                key={sig.type}
+                className="p-4 rounded-lg border border-slate-200 bg-slate-50 space-y-2"
+              >
                 <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono font-bold text-slate-900">{sig.title}</span>
-                  <span className="text-[10px] font-mono text-slate-500 uppercase">{sig.badge}</span>
+                  <div className="flex items-center gap-2">
+                    <span className={`w-2 h-2 rounded-full ${sig.dot}`} />
+                    <span className="text-xs font-mono font-bold text-slate-900">
+                      {sig.title}
+                    </span>
+                  </div>
+                  <span className="text-[10px] font-mono text-slate-500 uppercase">
+                    {sig.badge}
+                  </span>
                 </div>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  {sig.desc}
+                <p className="text-xs text-slate-600 leading-relaxed">{sig.desc}</p>
+                <p className="text-[11px] font-mono text-slate-500">
+                  <span className="text-slate-400">Effect:</span> {sig.effect}
                 </p>
-                <div className="text-[11px] font-mono text-blue-700 bg-white p-1.5 rounded border border-slate-200">
-                  <span className="text-slate-400">Effect: </span>
-                  {sig.gradientEffect}
-                </div>
               </div>
             ))}
           </div>

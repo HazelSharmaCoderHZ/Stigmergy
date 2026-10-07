@@ -21,10 +21,6 @@ import { HeroSection } from './components/HeroSection';
 import { SmartGridMapSection } from './components/SmartGridMapSection';
 import { StigmergyVisualizer } from './components/StigmergyVisualizer';
 import { ControlDashboard } from './components/ControlDashboard';
-import { BeforeAfterStigmergy } from './components/BeforeAfterStigmergy';
-import { AgentNetwork } from './components/AgentNetwork';
-import { GridSimulationSandbox } from './components/GridSimulationSandbox';
-import { SystemArchitecture } from './components/SystemArchitecture';
 import { Footer } from './components/Footer';
 
 export default function App() {
@@ -456,29 +452,13 @@ export default function App() {
           }}
         />
 
-        {/* 5. Before vs After Stigmergy Comparative Visual Matrix */}
-        <BeforeAfterStigmergy />
+       
 
-        {/* 6. Active Autonomous Agent Network Registry */}
-        <AgentNetwork
-          agents={agents}
-          nodes={nodes}
-          onSelectNode={(node) => {
-            setSelectedNode(node);
-            handleNavigateToSection('live-grid');
-          }}
-        />
+        
 
-        {/* 7. Grid Simulation Sandbox & Perturbation Sliders */}
-        <GridSimulationSandbox
-          params={simParams}
-          onChangeParams={(newP) => setSimParams((p) => ({ ...p, ...newP }))}
-          onApplyScenario={handleApplyScenario}
-          onResetSimulation={handleResetGrid}
-        />
+        
 
-        {/* 8. End-to-End System Architecture & Mathematical Foundations */}
-        <SystemArchitecture />
+        
       </main>
 
       {/* Clean Academic Footer */}

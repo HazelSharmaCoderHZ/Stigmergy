@@ -52,13 +52,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           {/* Left Column: Academic / Research Context & Value Proposition */}
           <div className="lg:col-span-5 space-y-6">
             
-            {/* Research Lab Tagline */}
-            <div className="flex items-center gap-2 text-xs font-mono text-blue-400">
-              <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-              <span>RESEARCH PROTOTYPE</span>
-              <span aria-hidden="true">·</span>
-              <span className="text-slate-400">IEEE PES & MULTI-AGENT SYSTEMS</span>
-            </div>
+            
 
             {/* Core Titles */}
             <div className="space-y-3">
@@ -75,21 +69,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               An adaptive electrical grid where autonomous agents sense local physical conditions, deposit environmental signals (<span className="text-blue-300 font-semibold">digital pheromones</span>), and dynamically coordinate real-time power dispatch without a single point of failure or centralized bottlenecks.
             </p>
 
-            {/* 3 Stigmergic Pillars */}
-            <div className="grid grid-cols-3 gap-2 py-2 border-y border-slate-800 text-left">
-              <div className="p-2 bg-slate-950/60 rounded border border-slate-800">
-                <span className="text-[10px] font-mono text-slate-400 block uppercase">Coordination</span>
-                <span className="text-xs font-semibold text-slate-200">Decentralized</span>
-              </div>
-              <div className="p-2 bg-slate-950/60 rounded border border-slate-800">
-                <span className="text-[10px] font-mono text-slate-400 block uppercase">Signaling</span>
-                <span className="text-xs font-semibold text-cyan-300">Pheromone Field</span>
-              </div>
-              <div className="p-2 bg-slate-950/60 rounded border border-slate-800">
-                <span className="text-[10px] font-mono text-slate-400 block uppercase">Self-Healing</span>
-                <span className="text-xs font-semibold text-emerald-400">Under 240ms</span>
-              </div>
-            </div>
+            
 
             {/* Interactive Control Triggers for the Professor */}
             <div className="pt-2 space-y-3">

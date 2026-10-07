@@ -21,12 +21,9 @@ export const Header: React.FC<HeaderProps> = ({
   onTriggerSurge,
 }) => {
   const navItems = [
-    { id: 'overview', label: 'Grid Overview' },
     { id: 'live-grid', label: 'Live Grid Map' },
     { id: 'stigmergy', label: 'Stigmergic Activity' },
     { id: 'analytics', label: 'Energy Analytics' },
-    { id: 'comparison', label: 'Coordination Matrix' },
-    { id: 'simulation', label: 'Simulation Sandbox' },
   ];
 
   return (
@@ -35,9 +32,7 @@ export const Header: React.FC<HeaderProps> = ({
         
         {/* Zone 1: Single text element wordmark / brand */}
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded bg-blue-600 flex items-center justify-center text-white shadow-inner font-mono font-bold text-sm">
-            SG
-          </div>
+          
           <div>
             <a 
               href="#overview" 
@@ -46,9 +41,7 @@ export const Header: React.FC<HeaderProps> = ({
             >
               STIGMERGIC SMART GRID
             </a>
-            <p className="text-[10px] font-mono tracking-widest text-slate-400 uppercase hidden sm:block">
-              Decentralized Environmental Energy Coordination
-            </p>
+            
           </div>
         </div>
 
